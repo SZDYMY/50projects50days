@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 3em;
+    cursor: pointer;
+    position: relative;
+    perspective: 300px;
+}
+.front,
+.back{
+    width: 100px;
+    height: 100px;
+    transition: 1s;
+    color: #ffffff;
+}
+.front{
+    background-color: #f40;
+}
+.back{
+    background-color: #008c8c;
+}
+.back{
+    transform: rotateY(180deg);
+}
+.container:hover .front{
+    transform: rotateY(-180deg);
+}
+.container:hover .back{
+    transform: rotateY(0deg);
+}
+.front,
+.back{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
